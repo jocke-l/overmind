@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import Optional, Sequence
 
 
 @dataclass(frozen=True)
@@ -13,7 +13,7 @@ class Prefix:
 @dataclass(frozen=True)
 class Message:
     command: str
-    params: List[str] = field(default_factory=list)
+    params: Sequence[str] = field(default_factory=list)
     prefix: Optional[Prefix] = None
 
     @property
